@@ -9,7 +9,6 @@ import java.util.List;
  * @DATE 2016-09-20
  */
 public class FieldExtractor {
-
     public static <T> T extract(Object obj, String name, T[] a) throws NoSuchFieldException, IllegalAccessException {
         if (obj == null) {
             return null;

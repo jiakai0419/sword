@@ -41,5 +41,4 @@ public class MapperTest {
             Assert.assertEquals("repeated key", e.getMessage());
         }
     }
-
 }

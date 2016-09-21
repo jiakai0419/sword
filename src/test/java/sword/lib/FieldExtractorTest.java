@@ -14,7 +14,6 @@ import java.util.List;
 * @version 1.0 
 */ 
 public class FieldExtractorTest {
-
     /**
     *
     * Method: extract(Object obj, String name, T[] a)
@@ -40,5 +39,4 @@ public class FieldExtractorTest {
                 new Integer[0]);
         Assert.assertArrayEquals(new Object[]{1024, 2048}, xList.toArray(new Object[0]));
     }
-
-} 
+}
