@@ -10,7 +10,7 @@ import java.util.List;
  * @DATE 2016-09-28
  */
 public class Compactor {
-    public static <T> List<T> compact(List<T> list) throws IllegalAccessException, InstantiationException {
+    public static <T> List<T> compact(List<T> list) {
         if (CollectionUtils.isEmpty(list)) {
             return list;
         }
