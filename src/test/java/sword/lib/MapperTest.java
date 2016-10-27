@@ -41,4 +41,51 @@ public class MapperTest {
             Assert.assertEquals("repeated key", e.getMessage());
         }
     }
+
+    /**
+     *
+     * Method: group(List<V> list, String name, K[] k)
+     *
+     */
+    @Test
+    public void testGroup() throws Exception {
+        // case: normal
+        List<Foo> foos = new LinkedList<Foo>() {{
+            add(new Foo(2, 2L));
+            add(new Foo(2, 6L));
+            add(new Foo(2, 8L));
+            add(new Foo(2, 8L));
+            add(new Foo(2, 8L));
+            add(new Foo(3, 3L));
+            add(new Foo(3, 9L));
+            add(new Foo(2, 4L));
+            add(new Foo(3, 6L));
+            add(new Foo(3, 3L));
+            add(new Foo(3, 3L));
+            add(new Foo(5, 10L));
+            add(new Foo(3, 6L));
+        }};
+        Map<Integer, List<Foo>> actual = Mapper.group(foos, "x", new Integer[0]);
+        Assert.assertEquals(new HashMap<Integer, List<Foo>>() {{
+            put(2, new LinkedList<Foo>() {{
+                add(new Foo(2, 2L));
+                add(new Foo(2, 6L));
+                add(new Foo(2, 8L));
+                add(new Foo(2, 8L));
+                add(new Foo(2, 8L));
+                add(new Foo(2, 4L));
+            }});
+            put(3, new LinkedList<Foo>() {{
+                add(new Foo(3, 3L));
+                add(new Foo(3, 9L));
+                add(new Foo(3, 6L));
+                add(new Foo(3, 3L));
+                add(new Foo(3, 3L));
+                add(new Foo(3, 6L));
+            }});
+            put(5, new LinkedList<Foo>() {{
+                add(new Foo(5, 10L));
+            }});
+        }}, actual);
+    }
 }
