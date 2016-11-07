@@ -2,5 +2,4 @@
 pragmatic lib for Java
 
 ### Todo List
-* filter
-* fmap
+* 
