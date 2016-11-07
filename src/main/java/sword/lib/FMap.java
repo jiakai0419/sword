@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * @Author KaiJia
- * @DATE 2016/11/7
+ * @DATE 2016-11-07
  */
 public class FMap {
     public static <A, B> List<B> fmap(List<A> list, FMapor<A, B> fmapor) {
