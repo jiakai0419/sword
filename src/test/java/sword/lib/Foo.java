@@ -35,4 +35,8 @@ public class Foo {
             return false;
         }
     }
+
+    public Integer getX() {
+        return x;
+    }
 }

@@ -88,4 +88,48 @@ public class MapperTest {
             }});
         }}, actual);
     }
+
+    /**
+     *
+     * Method: group(List<V> list, FMapor<V, K> fMapor)
+     *
+     */
+    @Test
+    public void testGroup2() throws Exception {
+        // case: normal
+        List<Foo> foos = new LinkedList<Foo>() {{
+            add(new Foo(1, 1L));
+            add(new Foo(2, 4L));
+            add(new Foo(3, 9L));
+            add(new Foo(4, 16L));
+            add(new Foo(5, 25L));
+            add(new Foo(6, 36L));
+            add(new Foo(7, 49L));
+            add(new Foo(8, 64L));
+            add(new Foo(9, 81L));
+            add(new Foo(10, 100L));
+        }};
+        Map<Integer, List<Foo>> actual = Mapper.group(foos, new FMapor<Foo, Integer>() {
+            @Override
+            public Integer fmap(Foo foo) {
+                return foo.getX() % 2;
+            }
+        });
+        Assert.assertEquals(new HashMap<Integer, List<Foo>>() {{
+            put(0, new LinkedList<Foo>() {{
+                add(new Foo(2, 4L));
+                add(new Foo(4, 16L));
+                add(new Foo(6, 36L));
+                add(new Foo(8, 64L));
+                add(new Foo(10, 100L));
+            }});
+            put(1, new LinkedList<Foo>() {{
+                add(new Foo(1, 1L));
+                add(new Foo(3, 9L));
+                add(new Foo(5, 25L));
+                add(new Foo(7, 49L));
+                add(new Foo(9, 81L));
+            }});
+        }}, actual);
+    }
 }

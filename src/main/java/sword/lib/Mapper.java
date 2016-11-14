@@ -38,4 +38,19 @@ public class Mapper {
         }
         return result;
     }
+
+    public static <K, V> Map<K, List<V>> group(List<V> list, FMapor<V, K> fMapor) {
+        if (list == null) {
+            return null;
+        }
+        Map<K, List<V>> result = new HashMap<K, List<V>>();
+        for (V v : list) {
+            K k = fMapor.fmap(v);
+            List<V> same = Defaultor.get(result.get(k), new LinkedList<V>());
+            same.add(v);
+            result.put(k, same);
+        }
+        return result;
+    }
+
 }
