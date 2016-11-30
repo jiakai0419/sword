@@ -44,7 +44,7 @@ public class DyncDict<K, V> {
         }, 0, period);
     }
 
-    protected void reload() {
+    private void reload() {
         FileInputStream fis = null;
         InputStreamReader isr = null;
         BufferedReader br = null;
