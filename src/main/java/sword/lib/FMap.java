@@ -7,6 +7,7 @@ import java.util.List;
  * @Author KaiJia
  * @DATE 2016-11-07
  */
+@Deprecated
 public class FMap {
     public static <A, B> List<B> fmap(List<A> list, FMapor<A, B> fmapor) {
         if (list == null) {

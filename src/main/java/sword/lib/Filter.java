@@ -9,6 +9,7 @@ import java.util.List;
  * @Author KaiJia
  * @DATE 2016-11-07
  */
+@Deprecated
 public class Filter {
     public static <T> List<T> filter(List<T> list, Predicate<T> pred) {
         if (CollectionUtils.isEmpty(list)) {

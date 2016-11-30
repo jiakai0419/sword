@@ -16,7 +16,7 @@ public class Pagor {
         if (pageNo < 1 || pageSize < 1) {
             throw new IllegalArgumentException();
         }
-        List<T> result = new LinkedList<T>();
+        List<T> result = new LinkedList<>();
         int offset = (pageNo - 1) * pageSize;
         int end = offset + pageSize;
         for (int i = offset; i < end && i < list.size(); i++) {

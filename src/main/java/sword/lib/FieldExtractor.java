@@ -8,6 +8,7 @@ import java.util.List;
  * @Author KaiJia
  * @DATE 2016-09-20
  */
+@Deprecated
 public class FieldExtractor {
     public static <T> T extract(Object obj, String name, T[] a) throws NoSuchFieldException, IllegalAccessException {
         if (obj == null) {

@@ -14,7 +14,7 @@ public class Mapper {
         if (list == null) {
             return null;
         }
-        Map<K, V> result = new HashMap<K, V>();
+        Map<K, V> result = new HashMap<>();
         for (V obj : list) {
             K field = FieldExtractor.extract(obj, name, k);
             if (result.containsKey(field)) {
@@ -29,7 +29,7 @@ public class Mapper {
         if (list == null) {
             return null;
         }
-        Map<K, List<V>> result = new HashMap<K, List<V>>();
+        Map<K, List<V>> result = new HashMap<>();
         for (V obj : list) {
             K field = FieldExtractor.extract(obj, name, k);
             List<V> same = Defaultor.get(result.get(field), new LinkedList<V>());
@@ -43,7 +43,7 @@ public class Mapper {
         if (list == null) {
             return null;
         }
-        Map<K, List<V>> result = new HashMap<K, List<V>>();
+        Map<K, List<V>> result = new HashMap<>();
         for (V v : list) {
             K k = fMapor.fmap(v);
             List<V> same = Defaultor.get(result.get(k), new LinkedList<V>());

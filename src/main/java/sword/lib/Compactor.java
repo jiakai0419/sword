@@ -14,7 +14,7 @@ public class Compactor {
         if (CollectionUtils.isEmpty(list)) {
             return list;
         }
-        List<T> result = new LinkedList<T>();
+        List<T> result = new LinkedList<>();
         for (T t : list) {
             if (t == null) {
                 continue;
