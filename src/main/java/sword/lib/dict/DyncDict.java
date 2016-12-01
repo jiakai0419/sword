@@ -36,12 +36,13 @@ public class DyncDict<K, V> {
         this.timer = new Timer();
         this.encoding = encoding;
         this.initialized = false;
+        reload();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 reload();
             }
-        }, 0, period);
+        }, period, period);
     }
 
     private void reload() {
@@ -72,7 +73,7 @@ public class DyncDict<K, V> {
             }
             dict = newDict;
             initialized = true;
-            log.debug("final dict {}", new Gson().toJson(dict));
+            log.info("final dict {}", new Gson().toJson(dict));
             log.info("reload success path[{}] size[{}]", path, dict.size());
         } catch (Throwable t) {
             log.error("reload failed path[{}] {}", path, ExceptionUtils.getStackTrace(t));
