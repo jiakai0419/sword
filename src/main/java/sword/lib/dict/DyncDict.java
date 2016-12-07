@@ -33,7 +33,7 @@ public class DyncDict<K, V> {
         this.path = path;
         this.parser = parser;
         this.dict = new HashMap<>();
-        this.timer = new Timer();
+        this.timer = new Timer(true);
         this.encoding = encoding;
         this.initialized = false;
         reload();
